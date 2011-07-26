@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			Author: Nat Ring 	@nat_ring
+			
+			Hover over the color wheel to make the inner circle pulsate.
+			
+			Click the color wheel to duplicate it, and place it randomly in the viewport.
+			Click the pinwheels many times to get a gauge on how many animations your system
+			and browser can handle.
+			
+		-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<style>
+			body{
+				background:#F5F6F7
+			}
+			.holder{
+				height:500px;
+				width:500px;
+				margin:-250px 0 0 -250px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				background:#fff;
+				border-radius:250px;
+			}
+
+			.letter{
+				position:absolute;
+				left:250px;
+				top:5px;
+				margin:0 0 0 -25px;
+				height:220px;
+				width:50px;
+				border-radius:50px 0 25px 25px;
+			}/*
+			.letter span{
+				background:#AAA;
+				color:#fff;
+				font-weight:bold;
+				font-size:30px;
+				text-align:center;
+				width:50px;
+				height:50px;
+				border-radius:36px;
+				text-transform:uppercase;
+				font-family:Helvetica;
+				padding:15px 0 0;
+				display:block;
+
+			}*/
+
+			.holder div.letter{
+				-webkit-animation-iteration-count:infinite;
+				-webkit-animation-timing-function:linear;
+				-webkit-animation-name:circle;
+				-webkit-animation-duration:4s;
+				-webkit-transform-origin: 50% 110%;
+				opacity:.75;
+			}
+			@-webkit-keyframes circle{
+
+				0%{
+					-webkit-transform:rotate(0deg);
+				}
+				25%{
+					-webkit-transform:rotate(90deg) ;
+				}
+				50%{
+					-webkit-transform:rotate(180deg) ;
+				}
+				75%{
+					-webkit-transform:rotate(270deg) ;
+				}
+				100%{
+					-webkit-transform:rotate(360deg) ;
+				}
+				
+			}
+			.holder div:nth-child(1) { -webkit-animation-delay:0ms; background:#000000;  }
+			.holder div:nth-child(2) { -webkit-animation-delay:200ms; background:#330000;  }
+			.holder div:nth-child(3) { -webkit-animation-delay:400ms; background:#330033; }
+			.holder div:nth-child(4) { -webkit-animation-delay:600ms; background:#000033;  }
+			.holder div:nth-child(5) { -webkit-animation-delay:800ms; background:#003333;  }
+			.holder div:nth-child(6) { -webkit-animation-delay:1000ms; background:#003300;  }
+			.holder div:nth-child(7) { -webkit-animation-delay:1200ms; background:#333300;  }
+			.holder div:nth-child(8) { -webkit-animation-delay:1400ms; background:#663300;  }
+			.holder div:nth-child(9) { -webkit-animation-delay:1600ms; background:#660000;  }
+			.holder div:nth-child(10) { -webkit-animation-delay:1800ms; background:#660033;  }
+			.holder div:nth-child(11) { -webkit-animation-delay:2000ms; background:#000000;  }
+			.holder div:nth-child(12) { -webkit-animation-delay:2200ms; background:#330000;  }
+			.holder div:nth-child(13) { -webkit-animation-delay:2400ms; background:#330033; }
+			.holder div:nth-child(14) { -webkit-animation-delay:2600ms; background:#000033;  }
+			.holder div:nth-child(15) { -webkit-animation-delay:2800ms; background:#003333;  }
+			.holder div:nth-child(16) { -webkit-animation-delay:3000ms; background:#003300;  }
+			.holder div:nth-child(17) { -webkit-animation-delay:3200ms; background:#333300;  }
+			.holder div:nth-child(18) { -webkit-animation-delay:3400ms; background:#663300;  }
+			.holder div:nth-child(19) { -webkit-animation-delay:3600ms; background:#660000;  }
+			.holder div:nth-child(20) { -webkit-animation-delay:3800ms; background:#660033;  }
+
+			.circle{
+				width:100px;
+				height:100px;
+				border-radius:50px;
+				background:white;
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin:-50px 0 0 -50px;
+				box-shadow: 0px 0px 5px black;
+			}
+			
+			.bigHolder:hover .circle{
+				-webkit-animation-iteration-count:infinite;
+				-webkit-animation-timing-function:linear;
+				-webkit-animation-name:contract;
+				-webkit-animation-duration:2s;
+				-webkit-transform-origin: 48% 48%;
+			}
+			@-webkit-keyframes contract{
+				0%{
+					-webkit-transform: scale(1,1);
+					box-shadow:0px 0px 5px black;
+				}
+				50%{
+					-webkit-transform: scale(.6,.6);
+					box-shadow: 0px 0px 0px black;
+				}
+				100%{
+					-webkit-transform: scale(1,1);
+					box-shadow: 0px 0px 5px black;
+				}
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="bigHolder holder">
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="letter"><span></span></div>
+			<div class="circle">
+			
+			</div>
+		</div><!-- end holder -->
+		<script>
+			$(document).ready(function(){
+				
+				var randHeight,
+					randWidth;					
+				
+				$(".bigHolder").live('click', function(){
+				
+					randHeight = Math.floor(Math.random() * $(window).height());
+					randWidth  = Math.floor(Math.random() * $(window).width());
+					
+					$(this).clone().css({
+						"top": randHeight,
+						"left": randWidth
+					}).appendTo('body');
+				});
+			});
+		
+		</script>
+	</body>
+</html>
